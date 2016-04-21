@@ -1,20 +1,27 @@
-def add (number, number_2)
+def add number, number_2
   number + number_2
 end
 
-def subtract (number, number_2)
+def subtract number, number_2
   number - number_2
 end
 
 def sum array
-  if array.empty?
-    array = [0]
-  end
+  array.inject(0, :+)
+end
 
-  sum = 0
-  array.each do |num|
-    num += num
-  end
+def multiply array
+  array.inject(:*)
+end
 
-  sum
+def power number, number_2
+  number**number_2
+end
+
+def factorial number
+  if number == 0
+    1
+  else
+    number * factorial(number-1)
+  end
 end
