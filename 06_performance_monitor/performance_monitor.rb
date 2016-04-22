@@ -7,6 +7,6 @@ def measure(n=1, &block)
     yield
     elapsed_time.push(Time.now - current_time)
   end
-
+  # averages the time for numerous events
   elapsed_time.inject{ |sum, el| sum + el }.to_f / n
 end
